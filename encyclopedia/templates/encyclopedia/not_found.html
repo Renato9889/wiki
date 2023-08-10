@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia - {{title}}
+{% endblock %}
+
+{% block body %}
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
+    <div style="color: red; font-size: 50px; text-align: center;">
+        <div class="container">
+            <img src="../../static/encyclopedia/PAGE404.png" alt="NOT FOUND !!!">
+        </div>
+    </div>    
+{% endblock %}

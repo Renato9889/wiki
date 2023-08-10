@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+        <style> 
+            .search {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 0 0 0 5px;
+                box-sizing: border-box;
+                border: 1px solid #000000;
+                outline: none;
+                color: black;
+            }
+            a {
+                text-decoration: none !important;
+            }
+            .buttonlink{
+                width: 100%;
+                background-color: #1265A3;
+                border: none;
+                color: white;
+                padding: 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 20px;
+                margin: 10px 4px;
+                cursor: pointer;
+                border-radius: 25px;
+            }
+            .buttonlink:hover{
+                background-color: #0d87d8;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                color: #000000;
+            }
+            .buttonlink:active{
+                color: rgb(255, 255, 255);
+            }
+            .sidebar{
+                background-color: #BFD7EA; 
+            }
+            </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="sidebar col-lg-2 col-md-3">
+                <a href="{% url 'index' %}"><img src="../../static/encyclopedia/enciclopedia.png" alt="Encyclopedia Logo" style="width: 100%; display: flex;"></a>
+                <form action="{% url 'search_title' 'title' %}" method="get" >
+                    <input class="search" type="text" name="title" placeholder="Search Encyclopedia" >
+                </form>
+                
+                <a href="{% url 'index' %}" class="buttonlink">Home</a>
+
+                <a href="{% url 'create_newpage' %}" class="buttonlink">New Page</a>
+                 
+                <a href="{% url 'search_random' %}" class="buttonlink">Random Page</a>
+        
+                {% block nav %}
+                {% endblock %}
+            </div>
+            <div class="main col-lg-10 col-md-9">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

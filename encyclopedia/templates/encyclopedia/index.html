@@ -1,0 +1,43 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <style>
+        .item {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            background-color: #5fabdf;
+            border: 1px solid #000000;
+            margin: 10px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 18px;
+            color: #000000;
+        }
+        .item:hover{
+            background-color: #0d87d8;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        .item:active{
+            color: rgb(255, 255, 255);
+        }
+        ::placeholder {
+            color: black;
+        }
+    </style>
+    <h1>All Pages</h1>
+    <div>
+        {% for entry in entries %}
+        <form style="display: inline;" action="{% url 'search' entry %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="item" value="{{entry}}">{{entry}}</button>
+        </form>
+        {% endfor %}
+    </div>
+        
+
+{% endblock %}

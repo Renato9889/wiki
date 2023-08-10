@@ -1,0 +1,32 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia - {{title}}
+{% endblock %}
+
+{% block body %}
+    <style>
+        .button_edit{
+            background-color: rgb(174, 216, 253);
+            margin: 2px 2px;
+            width: 60px;
+        }
+        .button_edit:active{
+            background-color: rgb(158, 167, 207);
+        }
+        ::placeholder {
+            color: black;
+        }
+    </style>
+    <div>
+        {{ entry }} 
+    </div>
+
+    <form action="{% url 'edit_page' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="title" value="{{ title }}"> 
+        <button class="button_edit" >Edit</button>
+    </form>
+    
+{% endblock %}
+

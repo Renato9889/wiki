@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["vercel.com"]
 
 INSTALLED_APPS = [
     'encyclopedia',
+    'entries',
     'django.contrib.admin',
     'markdownx',
     'django.contrib.auth',

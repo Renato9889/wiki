@@ -30,8 +30,6 @@
 
 ## ✔️ Techniques and technologies used
 - ``Python3``
-- ``Data Base``
-- ``SQL``
 - ``HTML``
 - ``Django``
 - ``CSS``

@@ -9,7 +9,7 @@
   <img src="https://github.com/Renato9889/project1/assets/38532053/4e79f284-6afc-4a52-9b21-32ced54d5f4a">
   <img src="https://github.com/Renato9889/project1/assets/38532053/b936a13b-049b-4c61-b020-5e611983269d">
 
-<h2>Specification</h2>
+<h2>Project details and specification</h2>
 <a href="https://youtu.be/mbwFpwo3gHU">Click here to view the project execution video</a>
 <ul>
   <li>Home - listing the names of all pages.</li>
@@ -30,6 +30,8 @@
 
 ## ✔️ Techniques and technologies used
 - ``Python3``
+- ``Data Base``
+- ``SQL``
 - ``HTML``
 - ``Django``
 - ``CSS``

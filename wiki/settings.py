@@ -25,13 +25,14 @@ SECRET_KEY = '%710m*zic)#0u((qugw#1@e^ty!c)9j04956v@ly(_86n$rg)h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'encyclopedia',
+    'entries',
     'django.contrib.admin',
     'markdownx',
     'django.contrib.auth',
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'wiki.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+APP_DIRS = True
